@@ -14,7 +14,7 @@ fi
 cp $1 cred_cred.csv
 
 #import to DB
-mysqlimport -v --local --ignore-lines=1 --fields-terminated-by=, --columns='title,username,password,description,group_id' --local -u root -p rattic cred_cred.csv
+mysqlimport -v --local --ignore-lines=1 --fields-terminated-by=, --columns='title,username,password,description,group_id' --local -u root rattic cred_cred.csv
 
 #set required parameters
 mysql -v -u root rattic -e \
