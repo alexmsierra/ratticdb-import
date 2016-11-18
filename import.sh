@@ -2,7 +2,8 @@
 
 display_usage() { 
 	echo "Please provide the csv file name" 
-	echo -e "\nUsage:\n$0 file.csv \n" 
+	echo -e "\nUsage:\n$0 file.csv \n"
+	exit 1
 }
 
 if [ "$#" -ne 1 ]; then
