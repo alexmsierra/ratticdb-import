@@ -14,13 +14,12 @@ fi
 cp $1 cred_cred.csv
 
 #import to DB
-mysqlimport -v --local --ignore-lines=1 --fields-terminated-by=, --columns='title,username,password,description' --local -u root -p rattic cred_cred.csv
+mysqlimport -v --local --ignore-lines=1 --fields-terminated-by=, --columns='title,username,password,description,group_id' --local -u root -p rattic cred_cred.csv
 
 #set required parameters
 mysql -v -u root rattic -e \
 "UPDATE cred_cred set created=NOW() where created='0000-00-00 00:00:00';
 UPDATE cred_cred set modified=NOW() where created='0000-00-00 00:00:00';
-UPDATE cred_cred set group_id='1' where group_id=NULL;
 UPDATE cred_cred set iconname='Key.png' where iconname=NULL;
 COMMIT;"
 
