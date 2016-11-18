@@ -20,7 +20,7 @@ mysqlimport -v --local --ignore-lines=1 --fields-terminated-by=, --columns='titl
 mysql -v -u root rattic -e \
 "UPDATE cred_cred set created=NOW() where created='0000-00-00 00:00:00';
 UPDATE cred_cred set modified=NOW() where modified='0000-00-00 00:00:00';
-UPDATE cred_cred set iconname='Key.png' where iconname=NULL;
+UPDATE cred_cred set iconname='Key.png' where iconname='';
 COMMIT;"
 
 #Housekeeping
