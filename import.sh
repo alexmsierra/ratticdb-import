@@ -11,7 +11,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 #copy csv file for the correct table name
-cp $i cred_cred.csv
+cp $1 cred_cred.csv
 
 #import to DB
 mysqlimport -v --local --ignore-lines=1 --fields-terminated-by=, --columns='title,username,password,description' --local -u root -p rattic cred_cred.csv
