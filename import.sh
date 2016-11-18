@@ -21,7 +21,8 @@ mysql -v -u root rattic -e \
 "UPDATE cred_cred set created=NOW() where created='0000-00-00 00:00:00';
 UPDATE cred_cred set modified=NOW() where created='0000-00-00 00:00:00';
 UPDATE cred_cred set group_id='1' where group_id=NULL;
-UPDATE cred_cred set iconname='Key.png' where iconname=NULL;"
+UPDATE cred_cred set iconname='Key.png' where iconname=NULL;
+COMMIT;"
 
 #Housekeeping
 rm cred_cred.csv
